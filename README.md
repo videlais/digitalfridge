@@ -11,4 +11,4 @@ We invite you to download this work-in-progress code to experiment and explore h
 ## Installation
 1. Download the files using the "Download as ZIP" button from the website or using the command-line version of git.
 2.  Copy the files over to your website hosting
-3. Drop in MP3 files named for their sound following the naming convention of for example, "her.mp3" for a sound file with the word "her"
+3. Drop in MP3 files named for their sound following the naming convention of, for example, "her.mp3" for a sound file with the word "her"
