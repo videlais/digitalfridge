@@ -1,3 +1,10 @@
+<?php
+
+require_once('lib/PlaylistBuilder.php');
+
+$playlist = new PlaylistBuilder('sounds');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,6 +26,9 @@
         <script src="js/audio.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/dragabilly.js"></script>
+        <script>
+            var playlistTotal = <?php echo $playlist->getPlaylist() ?>;
+        </script>
         <script src="js/site.js"></script>
     </head>
 
@@ -38,14 +48,14 @@
                 </div>
             </div>
             <div id="footer" data-role="footer" data-position-fixed="true">
-                <h2>
+                <h3>
                     Special thanks to Shelley Rodrigo, Jenn Fishman,
                     Joanna Howard, Megan Mize,<br> Sarah McGinley, Sarah Moesley,
                     Jennifer Hewerdine, Pamela VanHaitsma, <br> Dawn Opel, and Laurie Ann Britt-Smith.
-                </h2>
-                <h3>
+                </h3>
+                <h4>
                     <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike (CC BY-SA)</a>
-                </h3>       
+                </h4>       
             </div>
         </div>
     </body>

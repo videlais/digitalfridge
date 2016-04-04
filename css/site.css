@@ -2,10 +2,15 @@ body {
     overflow-y: hidden;
 }
 
+#workarea.btn {
+    padding: 4px 9px;
+    font-size: 10px;
+}
+
 .btn-primary {
     color: black;
     border: 1px solid whitesmoke;
-    margin: 1px 1px 1px 1px;
+    margin: 0.5px 0.5px 0.5px 0.5px;
     background-color: white;
 }
 

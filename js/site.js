@@ -2,14 +2,27 @@ $(document).ready(function () {
 
     $("#workarea").height($('body').height() * .49);
     $("#fridge").height($('body').height() * .49);
-    var value = [
-        "action", "are", "be", "choose", "coalition", "compose",
-        "embodies", "for", "future", "he", "it", "lived", "living",
-        "love", "mind", "mine", "now", "people", "person", "runs",
-        "scholars", "she", "speaks", "spoken", "the", "theory",
-        "thought", "we", "were", "who", "words", "write", "writing", "you",
-        "a", "at", "run", "speak", "they", "to", "too", "two", 
-        "women", "yours", "I", "is"];
+
+    // Creation an initial emtpty array
+    var value = [];
+    
+    // From the generated playlist, shuffle the names
+    playlistTotal = shuffle(playlistTotal);
+
+    // Save the total length
+    var totalEntries = playlistTotal.length;
+    
+    // Because we can only show 50 at a time, 
+    //  check if there are at least 50 
+    if(totalEntries > 50) {
+        // Since there were more than 50, cap it at 50
+        totalEntries = 50;
+    }
+   
+    // Run through the shuffled list, adding them to the value array
+    for(var i = 0; i < totalEntries; i++) {
+        value.push(playlistTotal[i]);
+    }
 
     var playList = [];
 
@@ -31,7 +44,7 @@ $(document).ready(function () {
                 {
                     css: false,
                     trackEnded: function () {
-                       
+
                         if (playlistPosition < jPlaylist.length) {
                             audio2.load(jPlaylist[playlistPosition]);
                             audio2.play();
@@ -59,6 +72,26 @@ $(document).ready(function () {
         container: "#workarea"
 
     });
+
+    function shuffle(array) {
+        var i = array.length,
+                j = 0,
+                temp;
+
+        while (i--) {
+
+            j = Math.floor(Math.random() * (i + 1));
+
+            // swap randomly chosen element with current element
+            temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+
+        }
+
+        return array;
+    }
+
     function playFile(url) {
 
         audio1.load(url);
